@@ -275,6 +275,7 @@ class LocalizationTest extends TestCase
     public function it_can_get_localized_url_with_specific_format($hideDefault, $forceDefault, $locale, $url, $expected)
     {
         $this->app['config']->set('localization.hide-default-in-url', $hideDefault);
+        $this->app['config']->set('localization.ignore-unnamed-routes', false);
 
         $this->assertEquals(
             $expected,

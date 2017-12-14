@@ -324,6 +324,7 @@ class Localization implements LocalizationContract
         }
 
         if (
+            !config('localization.ignore-unnamed-routes', false) &&
             $locale &&
             $translatedRoute = $this->findTranslatedRouteByUrl($url, $attributes, $this->getCurrentLocale())
         ) {
